@@ -20,8 +20,16 @@ header {
   padding: 20px;
   position: relative;
 }
+header .logo {
+  margin-right: 20px; /* Відстань між логотипом і заголовком */
+}
+header .logo img {
+  height: 70px; /* Розмір логотипу */
+  width: 90px;
+}
 header h1 {
   margin: 0;
+  display: inline; /* Зберігаємо заголовок у рядку з логотипом */
 }
 
 nav ul {
@@ -93,5 +101,6 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
 
 /*# sourceMappingURL=styles_home.css.map */
