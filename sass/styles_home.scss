@@ -1,0 +1,98 @@
+$color_1: #333;
+$color_2: #fff;
+$font-family_1: Arial, sans-serif;
+$background-color_1: #f4f4f4;
+$background-color_2: #333;
+$background-color_3: #555;
+$background-color_4: #777;
+$background-color_5: #fff;
+
+/* Reset default styles */
+/* Змінюємо стилі для останнього елемента списку (Logout) */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: $font-family_1;
+	background-color: $background-color_1;
+	color: $color_1;
+	line-height: 1.6;
+}
+header {
+	background-color: $background-color_2;
+	color: $color_2;
+	padding: 20px;
+	position: relative;
+	h1 {
+		margin: 0;
+	}
+}
+nav {
+	ul {
+		list-style: none;
+		li {
+			display: inline;
+			margin-right: 20px;
+			a {
+				color: $color_2;
+				text-decoration: none;
+			}
+			&:last-child {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 20px;
+				button {
+					background-color: $background-color_3;
+					&:hover {
+						background-color: $background-color_4;
+					}
+				}
+			}
+		}
+	}
+}
+main {
+	padding: 20px;
+	min-height: calc(100vh - 40px);
+	margin-bottom: 60px;
+}
+.product {
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: $background-color_5;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	h3 {
+		margin-top: 10px;
+	}
+	p {
+		margin-bottom: 10px;
+	}
+}
+button {
+	background-color: $background-color_2;
+	color: $color_2;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 3px;
+	cursor: pointer;
+	&:hover {
+		background-color: $background-color_3;
+	}
+}
+footer {
+	background-color: $background-color_2;
+	color: $color_2;
+	text-align: center;
+	padding: 20px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
