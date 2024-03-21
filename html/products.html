@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGI BuildMart - Products</title>
+    <link rel="stylesheet" href="../css/styles_products.css">
+    <script>
+        // Функція для фільтрації за категоріями
+        function filterProducts(category) {
+            var products = document.querySelectorAll('.product');
+            products.forEach(function(product) {
+                var productCategory = product.getAttribute('data-category');
+                if (category === 'all' || productCategory === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            })
+        }
+
+        // Функція для сортування за ціною
+        function sortProductsByPrice(order) {
+            var productsContainer = document.querySelector('#products-container');
+            var products = Array.from(productsContainer.querySelectorAll('.product'));
+            products.sort(function(a, b) {
+                var priceA = parseFloat(a.querySelector('p').textContent.split(' ')[0]);
+                var priceB = parseFloat(b.querySelector('p').textContent.split(' ')[0]);
+                if (order === 'asc') {
+                    return priceA - priceB;
+                } else {
+                    return priceB - priceA;
+                }
+            });
+            products.forEach(function(product) {
+                productsContainer.appendChild(product);
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Our Products</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <!-- Форма для виходу -->
+                    <form action="index.html" method="get">
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="category-buttons">
+            <button onclick="filterProducts('all')">All</button>
+            <button onclick="filterProducts('paint')">Paints</button>
+            <button onclick="filterProducts('tile-glue')">Tile Glues</button>
+            <button onclick="filterProducts('cement')">Cement</button>
+        </div>
+        <div>
+            <label for="sort">Sort by:</label>
+            <select id="sort" onchange="sortProductsByPrice(this.value)">
+                <option value="asc">Price (Low to High)</option>
+                <option value="desc">Price (High to Low)</option>
+            </select>
+        </div>
+        <section id="products-container">
+            <section id="paints">
+                <div class="product" data-category="paint">
+                    <img src="../images/Sniezka%20EKO%205L.jpg" alt="Sniezka Eko 5L">
+                    <h3>Sniezka Eko 5L</h3>
+                    <p>451,00 grn.</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product" data-category="paint">
+                    <img src="../images/Sniezka%20Ultra%20Biel%20%2010L.jpg" alt="Sniezka Ultra Biel 10L">
+                    <h3>Sniezka Ultra Biel 10L</h3>
+                    <p>565,00 grn.</p>
+                    <button>Add to Cart</button>
+                </div>
+            </section>
+            <section id="tile-glues">
+                <div class="product" data-category="tile-glue">
+                    <img src="../images/CM%2011.jpg" alt="Ceresit CM11 25kg">
+                    <h3>Ceresit CM11 25kg</h3>
+                    <p>443,00 grn.</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product" data-category="tile-glue">
+                    <img src="../images/CM%20117.jpg" alt="Ceresit CM117">
+                    <h3>Ceresit CM117</h3>
+                    <p>600,00 grn.</p>
+                    <button>Add to Cart</button>
+                </div>
+            </section>
+            <section id="cement">
+                <div class="product" data-category="cement">
+                    <img src="../images/IFCEM%20400.jpg" alt="IFCEM 400 25 kg">
+                    <h3>IFCEM 400 25 kg</h3>
+                    <p>120,00 grn.</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product" data-category="cement">
+                    <img src="../images/IFCEM%20500.jpg" alt="IFCEM 500 25 kg">
+                    <h3>IFCEM 500 25 kg</h3>
+                    <p>135,00 grn.</p>
+                    <button>Add to Cart</button>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 BGI BuildMart. All rights reserved.</p>
+    </footer>
+</body>
+</html>

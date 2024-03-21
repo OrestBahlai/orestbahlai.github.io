@@ -1,0 +1,104 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: relative; /* Додаємо позиціонування для дочірнього елементу */
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Змінюємо стилі для останнього елемента списку (Logout) */
+nav ul li:last-child {
+    position: absolute; /* Додаємо абсолютне позиціонування */
+    top: 50%; /* Вертикальне центрування */
+    transform: translateY(-50%); /* Коригуємо положення */
+    right: 20px; /* Розміщуємо зправа */
+}
+
+nav ul li:last-child button {
+    background-color: #555; /* Колір фону кнопки "Logout" */
+}
+
+nav ul li:last-child button:hover {
+    background-color: #777; /* Колір фону кнопки "Logout" при наведенні */
+}
+
+main {
+    padding: 20px;
+    min-height: calc(100vh - 40px); /* Мінімальна висота, яка дорівнює висоті екрана мінус висота підвалу і відступи */
+    margin-bottom: 60px; /* Відступ від нижнього краю для уникнення перекриття підвалом */
+}
+
+.product {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product h3 {
+    margin-top: 10px;
+}
+
+.product p {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
